@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "player")
-data class PlayerModel(
+data class DuoModel(
 
     @ColumnInfo(name = "name1")
     var name1: String,

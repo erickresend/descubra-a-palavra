@@ -11,7 +11,7 @@ class PlayersViewModel(application: Application) : AndroidViewModel(application)
     private val repository = PlayerRepository(application.applicationContext)
     val getAllPlayers = repository.getAllPlayers
 
-    fun insertPlayer(player: PlayerModel) {
+    fun insertPlayer(player: DuoModel) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertPlayer(player)
         }

@@ -7,7 +7,7 @@ class PlayerRepository(context: Context) {
     private val playerDatabase = AppDatabase.getDatabase(context).playerDao()
     val getAllPlayers = playerDatabase.getAllPlayers()
 
-    suspend fun insertPlayer(player: PlayerModel) {
+    suspend fun insertPlayer(player: DuoModel) {
         playerDatabase.insertPlayer(player)
     }
 

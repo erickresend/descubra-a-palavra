@@ -27,7 +27,7 @@ class NewPlayerActivity : AppCompatActivity() {
             val playerName2 = binding.editNewPlayer2.text.toString()
 
             if (playerName1.isNotEmpty() && playerName1.isNotBlank() && playerName2.isNotEmpty() && playerName2.isNotBlank()) {
-                playerViewModel.insertPlayer(PlayerModel(playerName1, playerName2))
+                playerViewModel.insertPlayer(DuoModel(playerName1, playerName2))
                 finish()
             } else {
                 Toast.makeText(this, "Digite o nome dos dois jogadores", Toast.LENGTH_SHORT).show()

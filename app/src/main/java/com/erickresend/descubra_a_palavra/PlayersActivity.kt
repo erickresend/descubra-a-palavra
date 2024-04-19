@@ -21,9 +21,9 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
         binding.recyclerviewPlayers.adapter = adapter
         playerViewModel = ViewModelProvider(this)[PlayersViewModel::class.java]
 
-        playerViewModel.getAllPlayers.observe(this, Observer {
+        playerViewModel.getAllPlayers.observe(this){
             adapter.setPlayerList(it)
-        })
+        }
     }
 
     override fun onStart() {
@@ -32,9 +32,15 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
         binding.btnNewDuo.setOnClickListener {
             startActivity(Intent(this, NewPlayerActivity::class.java))
         }
+
+        binding.btnPlayGame.setOnClickListener {  }
     }
 
-    override fun onClick(player: PlayerModel) {
-        TODO("Not yet implemented")
+    override fun onClick(player: DuoModel) {
+        val intent = Intent(this, EditPlayerActivity::class.java)
+        intent.putExtra("duoId", player.id)
+        intent.putExtra("duoName1", player.name1)
+        intent.putExtra("duoName2", player.name2)
+        startActivity(intent)
     }
 }

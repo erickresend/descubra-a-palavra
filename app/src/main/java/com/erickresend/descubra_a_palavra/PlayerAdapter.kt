@@ -9,14 +9,14 @@ class PlayerAdapter(
     var onItemClick: OnItemClick
 ): RecyclerView.Adapter<PlayerAdapter.PlayerViewHolder>() {
 
-    private var list = mutableListOf<PlayerModel>()
+    private var list = mutableListOf<DuoModel>()
 
     interface OnItemClick {
-        fun onClick(player: PlayerModel)
+        fun onClick(player: DuoModel)
     }
 
     inner class PlayerViewHolder(private val binding: ResPlayersBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(player: PlayerModel) {
+        fun bind(player: DuoModel) {
             binding.textPlayer1.text = player.name1
             binding.textPlayer2.text = player.name2
             binding.cardPlayer.setOnClickListener {
@@ -39,7 +39,7 @@ class PlayerAdapter(
         holder.bind(player)
     }
 
-    fun setPlayerList(players: List<PlayerModel>) {
+    fun setPlayerList(players: List<DuoModel>) {
         list = players.toMutableList()
         notifyDataSetChanged()
     }
