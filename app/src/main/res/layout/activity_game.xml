@@ -5,62 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.views.NewPlayerActivity">
+    tools:context=".ui.views.GameActivity">
 
     <TextView
-        android:id="@+id/text_title_new_player"
+        android:id="@+id/text_player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:text="Nova dupla"
-        android:textAllCaps="true"
-        android:textColor="@color/secondary"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/edit_new_player1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
-        android:id="@+id/edit_new_player1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="32dp"
-        android:background="@color/primary"
-        android:inputType="textCapWords"
-        android:padding="8dp"
-        android:textAllCaps="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="jogador que tenta adivinhar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btn_close" />
 
-    <EditText
-        android:id="@+id/edit_new_player2"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="32dp"
-        android:background="@color/primary"
-        android:inputType="textCapWords"
-        android:padding="8dp"
-        android:textAllCaps="true"
+    <TextView
+        android:id="@+id/text_player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="jogador que tenta adivinhar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_new_player1" />
+        app:layout_constraintTop_toBottomOf="@id/text_player1" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_words"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="32dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_player2"
+        app:layout_constraintBottom_toTopOf="@id/btn_concluded"
+        tools:listitem="@layout/res_words" />
 
     <Button
-        android:id="@+id/btn_new_duo"
+        android:id="@+id/btn_concluded"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:backgroundTint="@color/secondary"
+        android:elevation="8dp"
         android:padding="10dp"
-        android:text="Salvar"
+        android:text="concluído"
         android:textAllCaps="true"
         android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_new_player2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/btn_close"

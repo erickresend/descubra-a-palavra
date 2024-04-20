@@ -13,13 +13,19 @@
         android:theme="@style/Theme.Descubraapalavra"
         tools:targetApi="31">
         <activity
-            android:name=".EditPlayerActivity"
+            android:name=".ui.views.GameActivity"
             android:exported="false" />
         <activity
-            android:name=".NewPlayerActivity"
+            android:name=".ui.views.ScoreActivity"
             android:exported="false" />
         <activity
-            android:name=".PlayersActivity"
+            android:name=".ui.views.EditPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.views.NewPlayerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.views.PlayersActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

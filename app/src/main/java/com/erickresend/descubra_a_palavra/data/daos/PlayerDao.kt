@@ -1,10 +1,11 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.data.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
 
 @Dao
 interface PlayerDao {

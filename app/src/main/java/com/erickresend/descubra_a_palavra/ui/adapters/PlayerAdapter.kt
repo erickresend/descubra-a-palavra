@@ -1,8 +1,9 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
 import com.erickresend.descubra_a_palavra.databinding.ResPlayersBinding
 
 class PlayerAdapter(

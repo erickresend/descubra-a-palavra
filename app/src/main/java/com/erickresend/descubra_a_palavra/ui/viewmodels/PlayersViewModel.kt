@@ -1,8 +1,10 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.ui.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
+import com.erickresend.descubra_a_palavra.repositories.PlayerRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

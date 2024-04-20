@@ -1,6 +1,8 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.repositories
 
 import android.content.Context
+import com.erickresend.descubra_a_palavra.data.AppDatabase
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
 
 class PlayerRepository(context: Context) {
 

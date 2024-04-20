@@ -1,4 +1,4 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.data.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -17,4 +17,10 @@ data class DuoModel(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int = 0
+
+    @ColumnInfo(name = "score1")
+    var score1: Int = 0
+
+    @ColumnInfo(name = "score2")
+    var score2: Int = 0
 }

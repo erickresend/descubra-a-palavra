@@ -1,11 +1,13 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.ui.views
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
+import com.erickresend.descubra_a_palavra.ui.adapters.PlayerAdapter
 import com.erickresend.descubra_a_palavra.databinding.ActivityPlayersBinding
+import com.erickresend.descubra_a_palavra.ui.viewmodels.PlayersViewModel
 
 class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
 
@@ -33,7 +35,9 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
             startActivity(Intent(this, NewPlayerActivity::class.java))
         }
 
-        binding.btnPlayGame.setOnClickListener {  }
+        binding.btnPlayGame.setOnClickListener {
+            startActivity(Intent(applicationContext, ScoreActivity::class.java))
+        }
     }
 
     override fun onClick(player: DuoModel) {

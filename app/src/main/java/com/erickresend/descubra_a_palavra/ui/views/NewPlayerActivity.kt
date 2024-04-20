@@ -1,10 +1,12 @@
-package com.erickresend.descubra_a_palavra
+package com.erickresend.descubra_a_palavra.ui.views
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.erickresend.descubra_a_palavra.data.models.DuoModel
 import com.erickresend.descubra_a_palavra.databinding.ActivityNewPlayerBinding
+import com.erickresend.descubra_a_palavra.ui.viewmodels.PlayersViewModel
 
 class NewPlayerActivity : AppCompatActivity() {
 
