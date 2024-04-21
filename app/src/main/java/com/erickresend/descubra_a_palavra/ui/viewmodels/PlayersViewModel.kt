@@ -25,9 +25,25 @@ class PlayersViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
+    fun updatePlayerScore1(id: Int, score1: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updatePlayerScore1(id, score1)
+        }
+    }
+
+    fun updatePlayerScore2(id: Int, score2: Int) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updatePlayerScore2(id, score2)
+        }
+    }
+
     fun deletePlayer(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.deletePlayer(id)
         }
+    }
+
+    fun getPlayer(id: Int): DuoModel {
+        return repository.getPlayer(id)
     }
 }

@@ -17,7 +17,19 @@ class PlayerRepository(context: Context) {
         playerDatabase.updatePlayer(id, name1, name2)
     }
 
+    suspend fun updatePlayerScore1(id: Int, score1: Int) {
+        playerDatabase.updatePlayerScore1(id, score1)
+    }
+
+    suspend fun updatePlayerScore2(id: Int, score2: Int) {
+        playerDatabase.updatePlayerScore2(id, score2)
+    }
+
     suspend fun deletePlayer(id: Int) {
         playerDatabase.deletePlayer(id)
+    }
+
+    fun getPlayer(id: Int): DuoModel {
+        return playerDatabase.getPlayer(id)
     }
 }

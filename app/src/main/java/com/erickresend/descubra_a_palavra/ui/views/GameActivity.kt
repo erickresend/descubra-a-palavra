@@ -3,19 +3,20 @@ package com.erickresend.descubra_a_palavra.ui.views
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.lifecycle.ViewModelProvider
 import com.erickresend.descubra_a_palavra.data.datasource.DataSourceWords
 import com.erickresend.descubra_a_palavra.databinding.ActivityGameBinding
-import com.erickresend.descubra_a_palavra.databinding.ActivityScoreBinding
 import com.erickresend.descubra_a_palavra.ui.adapters.WordAdapter
+import com.erickresend.descubra_a_palavra.ui.viewmodels.PlayersViewModel
 import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityGameBinding
     private val adapter = WordAdapter()
+    private lateinit var playerViewModel: PlayersViewModel
+
+    private var counterScore: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,21 +25,62 @@ class GameActivity : AppCompatActivity() {
 
         binding.recyclerviewWords.adapter = adapter
         //binding.recyclerviewWords.layoutManager = LinearLayoutManager(this)
+        playerViewModel = ViewModelProvider(this)[PlayersViewModel::class.java]
 
         val list = mutableListOf<String>()
-
         val dataSource: ArrayList<String> = DataSourceWords.createDataSetWords()
-
         while (list.size < 5) {
             val randomIndex = Random.nextInt(dataSource.size)
             list.add(dataSource[randomIndex])
         }
-
         adapter.setWordsList(list)
     }
 
     override fun onStart() {
         super.onStart()
+
+        val getPlayerId = intent.getIntExtra("playerId", 1)
+        val player = playerViewModel.getPlayer(getPlayerId)
+        Toast.makeText(this, player.name1, Toast.LENGTH_SHORT).show()
+
+        if(player.score1 == 0) {
+            binding.textPlayer1.text = player.name1
+            binding.textPlayer2.text = player.name2
+        } else {
+            binding.textPlayer2.text = player.name2
+            binding.textPlayer1.text = player.name1
+        }
+
+
+
+
+
+
+
+        binding.btnCounter.setOnClickListener {
+            counterScore++
+            binding.textCounter.text = counterScore.toString()
+        }
+
+        binding.btnConcluded.setOnClickListener {
+
+            val counterChanges = binding.textCounter.text.toString()
+
+            if(player.score1 == 0) {
+                binding.textPlayer1.text = player.name1
+                binding.textPlayer2.text = player.name2
+
+                playerViewModel.updatePlayerScore1(player.id, counterChanges.toInt())
+                finish()
+
+            } else {
+                binding.textPlayer2.text = player.name2
+                binding.textPlayer1.text = player.name1
+
+                playerViewModel.updatePlayerScore2(player.id, counterChanges.toInt())
+                finish()
+            }
+        }
 
         binding.btnClose.setOnClickListener {
             finish()

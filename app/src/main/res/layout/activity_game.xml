@@ -31,11 +31,35 @@
         android:layout_height="0dp"
         android:layout_margin="32dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/btn_counter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/text_player2"
-        app:layout_constraintBottom_toTopOf="@id/btn_concluded"
         tools:listitem="@layout/res_words" />
+
+    <Button
+        android:id="@+id/btn_counter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="32dp"
+        android:backgroundTint="@color/secondary"
+        android:elevation="8dp"
+        android:padding="10dp"
+        android:text="+"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_concluded"
+        app:layout_constraintEnd_toStartOf="@+id/text_counter" />
+
+    <TextView
+        android:text="0"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:layout_margin="32dp"
+        android:id="@+id/text_counter"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_words"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btn_concluded"
