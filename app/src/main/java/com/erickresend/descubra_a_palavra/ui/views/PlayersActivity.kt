@@ -2,6 +2,8 @@ package com.erickresend.descubra_a_palavra.ui.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.erickresend.descubra_a_palavra.data.models.DuoModel
@@ -23,8 +25,16 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
         binding.recyclerviewPlayers.adapter = adapter
         playerViewModel = ViewModelProvider(this)[PlayersViewModel::class.java]
 
+        playerViewModel.deletePlayer()
+
         playerViewModel.getAllPlayers.observe(this){
             adapter.setPlayerList(it)
+
+            if(it.isEmpty()) {
+                binding.layoutNoPlayers.visibility = View.VISIBLE
+            } else {
+                binding.layoutNoPlayers.visibility = View.INVISIBLE
+            }
         }
     }
 
@@ -36,7 +46,14 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
         }
 
         binding.btnPlayGame.setOnClickListener {
-            startActivity(Intent(applicationContext, ScoreActivity::class.java))
+            val playersSize = playerViewModel.getAllPlayers.value?.size
+            if (playersSize != null) {
+                if(playersSize < 2) {
+                    Toast.makeText(this, "Precisa ter no mínimo duas duplas para jogar", Toast.LENGTH_SHORT).show()
+                } else {
+                    startActivity(Intent(applicationContext, ScoreActivity::class.java))
+                }
+            }
         }
     }
 

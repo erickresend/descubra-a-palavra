@@ -29,7 +29,7 @@
                 android:padding="8dp"
                 android:text="palavra 1"
                 android:textAllCaps="true"
-                android:textColor="@color/secondary"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

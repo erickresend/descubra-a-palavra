@@ -29,7 +29,7 @@
                 android:padding="8dp"
                 android:text="jogador 1"
                 android:textAllCaps="true"
-                android:textColor="@color/secondary"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -42,7 +42,7 @@
                 android:padding="8dp"
                 android:text="score 1"
                 android:textAllCaps="true"
-                android:textColor="@color/secondary"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 app:layout_constraintStart_toEndOf="@id/text_player1"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,7 @@
                 android:padding="8dp"
                 android:text="jogador 2"
                 android:textAllCaps="true"
-                android:textColor="@color/secondary"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
                 android:padding="8dp"
                 android:text="score 2"
                 android:textAllCaps="true"
-                android:textColor="@color/secondary"
+                android:textColor="@color/black"
                 android:textSize="32sp"
                 app:layout_constraintStart_toEndOf="@id/text_player2"
                 app:layout_constraintTop_toTopOf="@id/text_player2" />

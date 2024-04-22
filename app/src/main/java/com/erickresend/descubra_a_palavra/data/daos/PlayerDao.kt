@@ -25,6 +25,9 @@ interface PlayerDao {
     @Query("DELETE FROM player WHERE id = :id")
     suspend fun deletePlayer(id: Int)
 
+    @Query("DELETE FROM player")
+    suspend fun deletePlayer()
+
     @Query("SELECT * FROM player WHERE id = :id")
     fun getPlayer(id: Int): DuoModel
 

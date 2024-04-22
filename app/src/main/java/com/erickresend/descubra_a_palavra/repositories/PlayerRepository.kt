@@ -29,6 +29,10 @@ class PlayerRepository(context: Context) {
         playerDatabase.deletePlayer(id)
     }
 
+    suspend fun deletePlayer() {
+        playerDatabase.deletePlayer()
+    }
+
     fun getPlayer(id: Int): DuoModel {
         return playerDatabase.getPlayer(id)
     }

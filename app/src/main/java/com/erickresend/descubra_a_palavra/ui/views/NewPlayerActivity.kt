@@ -34,10 +34,10 @@ class NewPlayerActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Digite o nome dos dois jogadores", Toast.LENGTH_SHORT).show()
             }
+        }
 
-            binding.btnClose.setOnClickListener {
-                finish()
-            }
+        binding.btnClose.setOnClickListener {
+            finish()
         }
     }
 }

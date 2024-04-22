@@ -43,6 +43,12 @@ class PlayersViewModel(application: Application) : AndroidViewModel(application)
         }
     }
 
+    fun deletePlayer() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deletePlayer()
+        }
+    }
+
     fun getPlayer(id: Int): DuoModel {
         return repository.getPlayer(id)
     }
