@@ -2,6 +2,7 @@ package com.erickresend.descubra_a_palavra.ui.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -26,6 +27,8 @@ class ScoreActivity : AppCompatActivity(), ScoreAdapter.OnItemClick {
 
         playerViewModel.getAllPlayers.observe(this){
             adapter.setPlayerList(it)
+
+            showResult(it)
         }
     }
 
@@ -46,6 +49,35 @@ class ScoreActivity : AppCompatActivity(), ScoreAdapter.OnItemClick {
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra("playerId", player.id)
             startActivity(intent)
+        }
+    }
+
+    private fun showResult(allPlayers: List<DuoModel>) {
+        var playerWithZeroScore = false
+        for (i in allPlayers.indices) {
+            val player = allPlayers[i]
+            if (player.score1 == 0 || player.score2 == 0) {
+                playerWithZeroScore = true
+                break
+            }
+        }
+        if (!playerWithZeroScore) {
+            binding.winner.visibility = View.VISIBLE
+
+            var cont = 0
+            var playerWinner: DuoModel = DuoModel("teste1", "teste2")
+            for (player in allPlayers) {
+                if(cont == 0) {
+                    playerWinner = player
+                    cont = player.score1 + player.score2
+                } else {
+                    if (cont < (player.score1 + player.score2)) {
+                        playerWinner = player
+                    }
+                }
+            }
+
+            binding.textResult.text = "${playerWinner.name1} e ${playerWinner.name2} ganharam em apenas ${playerWinner.score1 + playerWinner.score2} tentativas"
         }
     }
 }

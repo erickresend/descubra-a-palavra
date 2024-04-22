@@ -41,7 +41,6 @@ class GameActivity : AppCompatActivity() {
 
         val getPlayerId = intent.getIntExtra("playerId", 1)
         val player = playerViewModel.getPlayer(getPlayerId)
-        Toast.makeText(this, player.name1, Toast.LENGTH_SHORT).show()
 
         if(player.score1 == 0) {
             binding.textPlayer1.text = player.name1
