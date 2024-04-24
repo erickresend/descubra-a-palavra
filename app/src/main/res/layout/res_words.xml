@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary"
         app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
         app:cardPreventCornerOverlap="false"
         app:cardUseCompatPadding="true"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,12 +24,12 @@
                 android:id="@+id/text_word"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
                 android:padding="8dp"
                 android:text="palavra 1"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

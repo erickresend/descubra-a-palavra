@@ -77,7 +77,7 @@ class ScoreActivity : AppCompatActivity(), ScoreAdapter.OnItemClick {
                 }
             }
 
-            binding.textResult.text = "${playerWinner.name1} e ${playerWinner.name2} ganharam em apenas ${playerWinner.score1 + playerWinner.score2} tentativas"
+            binding.textResult.text = "${playerWinner.name1} e ${playerWinner.name2} ganharam com apenas ${playerWinner.score1 + playerWinner.score2} tentativas"
         }
     }
 }

@@ -43,11 +43,11 @@ class GameActivity : AppCompatActivity() {
         val player = playerViewModel.getPlayer(getPlayerId)
 
         if(player.score1 == 0) {
-            binding.textPlayer1.text = "${player.name1} vai tentar adivinhar as palavras"
-            binding.textPlayer2.text = "${player.name2} vai ajudar a adivinhar as palavras"
+            binding.textPlayer1.text = "${player.name1}\nVai tentar adivinhar as palavras"
+            binding.textPlayer2.text = "${player.name2}\nVai ajudar falando palavras que sejam relacionadas\nNão pode fazer gestos\nApenas um palavra por vez "
         } else {
-            binding.textPlayer1.text = "${player.name2} vai tentar adivinhar as palavras"
-            binding.textPlayer2.text = "${player.name1} vai ajudar a adivinhar as palavras"
+            binding.textPlayer1.text = "${player.name2}\nVai tentar adivinhar as palavras"
+            binding.textPlayer2.text = "${player.name1}\nVai ajudar a adivinhar as palavras"
         }
 
         binding.btnCounter.setOnClickListener {
@@ -60,15 +60,15 @@ class GameActivity : AppCompatActivity() {
             val counterChanges = binding.textCounter.text.toString()
 
             if(player.score1 == 0) {
-                binding.textPlayer1.text = "${player.name1} vai tentar adivinhar as palavras"
-                binding.textPlayer2.text = "${player.name2} vai ajudar a adivinhar as palavras"
+                binding.textPlayer1.text = "${player.name1}\nVai tentar adivinhar as palavras"
+                binding.textPlayer2.text = "${player.name2}\nVai ajudar a adivinhar as palavras"
 
                 playerViewModel.updatePlayerScore1(player.id, counterChanges.toInt())
                 finish()
 
             } else {
-                binding.textPlayer1.text = "${player.name2} vai tentar adivinhar as palavras"
-                binding.textPlayer2.text = "${player.name1} vai ajudar a adivinhar as palavras"
+                binding.textPlayer1.text = "${player.name2}\nVai tentar adivinhar as palavras"
+                binding.textPlayer2.text = "${player.name1}\nVai ajudar a adivinhar as palavras"
 
                 playerViewModel.updatePlayerScore2(player.id, counterChanges.toInt())
                 finish()
