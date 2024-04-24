@@ -25,54 +25,64 @@
                 android:id="@+id/text_player1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:padding="8dp"
+                android:layout_margin="8dp"
                 android:text="jogador 1"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="32sp"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/text_score_player1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:padding="8dp"
-                android:text="score 1"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="32sp"
-                app:layout_constraintStart_toEndOf="@id/text_player1"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toTopOf="@id/text_score_player2" />
 
             <TextView
                 android:id="@+id/text_player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:padding="8dp"
+                android:layout_margin="8dp"
                 android:text="jogador 2"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="32sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_player1" />
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                android:id="@+id/text_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pontos"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:layout_margin="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/text_score_player1"/>
+
+            <TextView
+                android:id="@+id/text_score_player1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="15"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@id/text_points"
+                app:layout_constraintStart_toStartOf="@id/text_points"
+                app:layout_constraintBottom_toTopOf="@id/text_score_player2" />
+
+
 
             <TextView
                 android:id="@+id/text_score_player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:padding="8dp"
-                android:text="score 2"
+                android:layout_margin="8dp"
+                android:text="15"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textSize="32sp"
-                app:layout_constraintStart_toEndOf="@id/text_player2"
-                app:layout_constraintTop_toTopOf="@id/text_player2" />
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/text_points"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/text_points"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

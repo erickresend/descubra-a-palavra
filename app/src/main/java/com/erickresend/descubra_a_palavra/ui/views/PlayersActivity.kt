@@ -25,7 +25,7 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
         binding.recyclerviewPlayers.adapter = adapter
         playerViewModel = ViewModelProvider(this)[PlayersViewModel::class.java]
 
-        playerViewModel.deletePlayer()
+        //playerViewModel.deletePlayer()
 
         playerViewModel.getAllPlayers.observe(this){
             adapter.setPlayerList(it)
@@ -58,6 +58,7 @@ class PlayersActivity : AppCompatActivity(), PlayerAdapter.OnItemClick {
     }
 
     override fun onClick(player: DuoModel) {
+
         val intent = Intent(this, EditPlayerActivity::class.java)
         intent.putExtra("duoId", player.id)
         intent.putExtra("duoName1", player.name1)

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@color/background"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.views.PlayersActivity">
 
     <TextView
         android:id="@+id/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
+        android:layout_margin="16dp"
         android:text="jogadores"
         android:textAllCaps="true"
         android:textColor="@color/secondary"
@@ -26,7 +26,7 @@
         android:id="@+id/recyclerview_players"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="32dp"
+        android:layout_margin="16dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toTopOf="@+id/btn_new_duo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:id="@+id/btn_new_duo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
+        android:layout_margin="16dp"
         android:layout_marginTop="8dp"
         android:background="@color/white"
         android:src="@drawable/img_add"
@@ -52,7 +52,7 @@
         android:id="@+id/btn_play_game"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="32dp"
+        android:layout_margin="16dp"
         android:backgroundTint="@color/secondary"
         android:elevation="8dp"
         android:padding="10dp"
@@ -66,18 +66,35 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_no_players"
         android:layout_width="match_parent"
-        android:visibility="invisible"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"
+        app:layout_constraintBottom_toTopOf="@id/btn_play_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible">
 
-        <TextView
+        <ImageView
+            android:id="@+id/sad_face"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/img_sad_face"
+            app:layout_constraintBottom_toTopOf="@+id/text_no_players"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="Adicione novos jogadores"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/text_no_players"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Adicione duplas de jogadores no botão +"
             android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:textColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

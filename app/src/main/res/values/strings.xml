@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">descubra-a-palavra</string>
+    <string name="instructions">Instruções: Clique na dupla para jogar\n
+Cada jogador pode jogar uma vez e tentar acertar todas a palavras no menor tempo possível\n
+Um jogador da dupĺa irá tentar adivinhar e o outro vai falar palavras relacionadas para ajudar o parceiro a adivinhar\n
+A cada tentativa, soma 1 ponto, a dupla vencedora será a que somar menos pontos</string>
 </resources>
